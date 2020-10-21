@@ -1,0 +1,51 @@
+<p>regex-validate works!</p>
+
+<mat-card>
+  <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">username</label>
+          <input type="text" class="form-control" formControlName="username" placeholder="Enter username">
+          <mat-error *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.required">
+            {{ titleAlert }}
+          </mat-error>
+      
+          <!-- <small class="form-text text-muted"
+          *ngIf="loginForm.controls.username.touched && loginForm.controls.username.errors?.username">
+              Email address not well formed.!
+          </small> -->
+        </div>
+       
+        <div class="form-group">
+         <label for="exampleInputPassword1">Password</label>
+         <input matInput type="password" class="form-control" formControlName="password" placeholder="Password">
+         <!-- <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+            {{ titleAlert }}
+          </mat-error>
+
+          <mat-error *ngIf="loginForm.controls.password.errors?.minlength">
+            Minimum Length Should be 5.
+          </mat-error>
+          <mat-error *ngIf="loginForm.controls.password.errors?.pattern">
+            Doest Not match pattern criteria..
+          </mat-error> -->
+
+
+          <mat-error *ngIf="loginForm.get('password').hasError('required')">
+            this field is required
+          </mat-error>
+
+          <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
+            minimum8 letters
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password').hasError('pattern')">
+            pattern should match
+          </mat-error>
+
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+
+       <!-- <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button> -->
+     </form>
+  </div>
+</mat-card>

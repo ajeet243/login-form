@@ -1,0 +1,12 @@
+.user-info{
+    width:50%;
+    float: left;
+}
+.user-img{
+width:40%;
+margin-left:5%;
+float: right;
+}
+td{
+    width:50%;
+}

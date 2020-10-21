@@ -1,0 +1,43 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand  style="height: 70px;"><a class="navbar-brand" href="#"></a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect (click)="home()">Home<span class="sr-only">(current)</span></a>
+      </li>
+      
+      <!-- Dropdown -->
+      
+    </ul>
+
+    <!-- log-in page -->
+    <div>
+        <ul class="nav-item" *ngIf="!isLoggedIn" style="width:40px">
+          <a class="nav-link" href="/login" tabindex="-1" aria-disabled="true">Login</a> <!--route to login page-->
+        </ul>
+        <ul class="nav-item" *ngIf="isLoggedIn">
+          <span>Welcome, {{_user}}</span>
+              <span (click)="logOut()"> <a class="nav-link "  tabindex="-1" aria-disabled="true" >Logout</a></span>
+        </ul>
+    </div>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link">
+          <mdb-icon fas icon="shopping-cart"></mdb-icon>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

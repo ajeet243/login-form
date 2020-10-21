@@ -1,0 +1,27 @@
+<div>Inside modal</div>
+<h1 mat-dialog-title>Dialog with elements</h1>
+<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button (click)="onCancel()">noThanks</button>
+</div>
+
+<div  class="container">
+    <form [formGroup]="modalform" (ngSubmit)="onSubmit(modalform)">
+        <mat-form-field>
+            <input matInput type="text" formControlName="name" placeholder="name">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" formControlName="email" placeholder="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" formControlName="login_id" placeholder="login_id">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" formControlName="password" placeholder="password">
+        </mat-form-field>
+        
+        <button mat-button color="primary">submit</button>
+    
+    </form>
+</div>
